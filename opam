@@ -1,0 +1,18 @@
+opam-version: "1.2"
+name: "opam-solver-proxy"
+version: "1.0.0"
+maintainer: "Anil Madhavapeddy <anil@recoil.org>"
+authors: "Anil Madhavapeddy <anil@recoil.org>"
+homepage: "https://github.com/avsm/opam-solver-proxy"
+bug-reports: "https://github.com/avsm/opam-solver-proxy/issues"
+license: "ISC"
+dev-repo: "https://github.com/avsm/opam-solver-proxy.git"
+build: [[make]]
+install: []
+remove: ["ocamlfind" "remove" "opam-solver-proxy"]
+depends: [
+  "ocamlfind" {build}
+  "lwt"
+  "cohttp" {>="0.19.0"}
+  "ssl"
+]
