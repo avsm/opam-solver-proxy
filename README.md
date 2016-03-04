@@ -18,6 +18,10 @@ behind the same interface.  This proxy is intended for bulk builds
 and other CI systems that make many hundreds of parallel requests
 and so need to run beside their associated build containers.
 
+Most people will probably prefer to use the IRILL solver day-to-day, since it
+compresses the outgoing request and also load-balances multiple different
+solvers to give the optimum solution.  This repo doesn't do any of that...
+
 * Author: Anil Madhavapeddy <anil@recoil.org>
 * Questions: <opam-devel@lists.ocaml.org>
 * Issues: https://github.com/avsm/opam-solver-proxy

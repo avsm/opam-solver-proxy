@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SERVER=@SERVER@
+SERVER=solver.opam-remote.8fa3b6b3.svc.dockerapp.io:8080
 if curl -o "$2" --data-binary @"$1" http://$SERVER/cudf?criteria="$3"; 
 then exit 0
 else echo FAIL > "$2"
