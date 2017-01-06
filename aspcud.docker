@@ -1,7 +1,9 @@
 #!/bin/sh
 
-SERVER=solver.ocaml.io:8080
-if curl -o "$2" --data-binary @"$1" http://$SERVER/cudf?criteria="$3"; 
+if [ "$1" = "-v" ]; then echo aspcud version 1.9.1; exit 0; fi
+SERVER=solver.opam-remote.8fa3b6b3.svc.dockerapp.io:8080
+criteria=`echo $3 | sed -e 's/,/%2C/g'`
+if curl -o "$2" --data-binary @"$1" "http://$SERVER/cudf?criteria='$criteria'";
 then exit 0
 else echo FAIL > "$2"
 fi
